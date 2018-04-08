@@ -1,0 +1,620 @@
+<html>
+<head>
+<title>E-question Generator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<style>
+a:hover{
+text-decoration:none;
+color:#A5D4EF;
+}
+
+
+
+/* Full-width input fields */
+.qwe {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color:black;
+}
+
+
+.pqr{
+
+width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color:black;
+}
+/* Set a style for all buttons */
+
+
+button:hover {
+    color:#A5D4EF;
+}
+
+.stu{
+    width: auto;
+    padding: 10px 18px;
+    background-color: #2AF116;
+    border:none;
+    color: white;
+}
+  
+
+
+
+
+
+
+
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #F54742;
+    border:none;
+    color: white;
+
+}
+
+
+
+
+
+
+.container {
+    padding: 10px;
+    
+    
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: red; /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+
+.mawy{
+
+border-style:none; 
+padding: 0px 0px; 
+width:29px;
+height:0px;
+color:white;
+font-size:11.5px;
+margin:0px;
+}
+
+.may{
+border-style:none; 
+padding: 0px 0px; 
+width:38px;
+height:0px;
+color:white;
+font-size:11.5px;
+margin:0px;
+}
+.mayr{
+
+border-style:none; 
+padding: 0px 0px; 
+width:70px;
+height:0px;
+color:white;
+font-size:11.5px;
+margin:0px;
+}
+
+.maye{
+
+border-style:none; 
+padding: 0px 0px; 
+width:120px;
+height:0px;
+color:black;
+font-size:11.5px;
+margin:0px;
+
+
+}
+</style>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+var modal = document.getElementById('id02');
+var modal = document.getElementById('id03');
+var modal = document.getElementById('id04');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<body id="top">
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row0">
+  <div id="topbar" class="clear"> 
+    <!-- ################################################################################################ -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      
+        
+        <li><button class="mawy" onclick="document.getElementById('id01').style.display='block'" >Login</button></li>
+        <li><button class="may" onclick="document.getElementById('id02').style.display='block'" >SignUp</button></li>
+        <li><button class="mayr" onclick="document.getElementById('id04').style.display='block'" >Admin Login</button></li>
+      </ul>
+    </nav>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row1">
+  <header id="header" class="clear"> 
+    <!-- ################################################################################################ -->
+    <div id="logo" class="fl_left">
+      <h1><a href="index.html">E-Question Generator</a></h1>
+     
+    </div>
+    <div class="fl_right">
+      <form name="jksearch" action="http://www.google.com/search" method="get" onSubmit="jksitesearch(this)">
+        <fieldset>
+          <legend>Search:</legend>
+          <input type="text" name="qfront" placeholder="Search Here">
+          <input id="hiddenquery" type="hidden" name="q" />
+          <button class="fa fa-search" type="submit" title="Search"><em>Search</em></button>
+        </fieldset>
+        </form>
+    </div>
+    <!-- ################################################################################################ --> 
+  </header>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="Login.jsp">
+    
+    <div class="container">
+      <label for="uname"><font color="black"><b>Email</b></font></label>
+      <input type="text" class="qwe" placeholder="Enter Email" name="emailId" required>
+
+      <label for="psw"><font color="black"><b>Password</b></font></label>
+      <input type="password" class="qwe" placeholder="Enter Password" name="pass" required>
+        
+      <input type="submit" class="stu" value="Submit">
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><button class="maye" onclick="document.getElementById('id03').style.display='block'" >Forgot password?</button></span>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+<!-- ################################################################################################ --> 
+
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="Registration_DataBase.jsp">
+    
+    <div class="container">
+      <label for="u1name"><font color="black"><b>Email</b></font></label>
+      <input type="text" class="pqr" placeholder="Enter Email" name="email" required>
+
+      <label for="psw1"><font color="black"><b>Password</b></font></label>
+      <input type="password" class="pqr" placeholder="Enter Password" name="password1" required>
+      <label for="psw"><font color="black">
+          <b>Confirm Password</b></font></label>
+      <input type="password" class="pqr" placeholder="Re-Enter Password" name="password2" required>
+      <button type="submit" class="stu">SignUp</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    </div>
+  </form>
+</div>
+<!-- ################################################################################################ --> 
+
+
+
+<div id="id03" class="modal">
+  
+  <form class="modal-content animate" action="mail" method="POST">
+    
+    <div class="container">
+      <label for="uname3"><font color="black"><b>Enter your registered Email ID</b></font></label>
+      <input type="text" class="qwe" placeholder="Enter Email" name="to" required>
+       <input type="submit" class="stu" value="Send">
+</div>
+      <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    
+</div>
+</form>
+</div>
+<!-- ################################################################################################ -->
+
+<div id="id04" class="modal">
+  
+  <form class="modal-content animate" action="Admin_Login.jsp" method="POST">
+    
+    <div class="container">
+      <label for="uname"><font color="black"><b>User Name</b></font></label>
+      <input type="text" class="qwe" placeholder="Enter UserName" name="username" required>
+
+      <label for="psw"><font color="black"><b>Password</b></font></label>
+      <input type="password" class="qwe" placeholder="Enter Password" name="password" required>
+        
+      <input type="submit" class="stu" value="Submit">
+     
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id04').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw"><button class="maye" onclick="document.getElementById('id05').style.display='block'" >Forgot password?</button></span>
+    </div>
+  </form>
+</div>
+
+
+<div id="id05" class="modal">
+  
+  <form class="modal-content animate" action="">
+    
+    <div class="container">
+      <label for="uname3"><font color="black"><b>Enter your UserName</b></font></label>
+      <input type="text" class="qwe" placeholder="Enter Username" name="" required>
+       <button type="submit" class="stu">S</button>
+</div>
+      <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
+      
+    
+</div>
+</form>
+</div>
+
+<!-- ################################################################################################ -->
+<div class="wrapper row2">
+  <div class="rounded">
+    <nav id="mainav" class="clear"> 
+      <!-- ################################################################################################ -->
+      <ul class="clear">
+        <li class="active"><a href="index.html">Home</a></li>
+        
+        <li><a class="drop" href="#">Categories</a>
+          <ul>
+            <li><a class="drop" href="#">English</a><ul>
+                <li><a href="englishset1.html">Demo</a></li>
+               
+              </ul></li>
+ <li><a class="drop" href="#">Numbers & Series</a><ul>
+                <li><a href="number.html">Demo</a></li>
+                
+              </ul></li>
+ <li><a class="drop" href="#">Time & Distance</a><ul>
+                <li><a href="time.html">Demo</a></li>
+                
+              </ul></li>
+ <li><a class="drop" href="#">Permutations & Combinations</a><ul>
+                <li><a href="per.html">Demo</a></li>
+                
+              </ul></li>
+ <li><a class="drop" href="#">Simple & Complex Interest</a><ul>
+                <li><a href="interest.html">Demo</a></li>
+               
+              </ul></li>
+            
+          </ul>
+        </li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="others.html">Others</a></li>
+      </ul>
+      <!-- ################################################################################################ --> 
+    </nav>
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper">
+  <div id="slider">
+    <div id="slide-wrapper" class="rounded clear"> 
+      <!-- ################################################################################################ -->
+      <figure id="slide-1"><a class="view" href="#"><img src="1.png" alt=""></a>
+        <figcaption>
+          <h2>English</h2>
+          <p>It is simply based on simple grammer,passage based questions,synnonyms and antonyms</p>
+          <p class="right"></p>
+        </figcaption>
+      </figure>
+      <figure id="slide-2"><a class="view" href="#"><img src="2.png" alt=""></a>
+        <figcaption>
+          <h2>Numbers and Series</h2>
+          <p>We often use sequences and series of numbers without thinking about it. A decimal representation of a number is an example of a series.</p>
+          <p class="right"></p>
+        </figcaption>
+      </figure>
+      <figure id="slide-3"><a class="view" href="#"><img src="3.png" alt=""></a>
+        <figcaption>
+          <h2>Time and Distance</h2>
+          <p>Speed basically tells us how fast or slow an object moves.It is described as the distance travelled by an object divided with the time taken to cover           that distance.</p>
+          <p class="right"></p>
+        </figcaption>
+      </figure>
+      <figure id="slide-4"><a class="view" href="#"><img src="4.png" alt=""></a>
+        <figcaption>
+          <h2>Permutations and Combinations</h2>
+          <p>Permutations are the different arrangements of a given number of things by taking some or all at a time. 
+Each of the different groups or selections formed by taking some or all of a number of objects is called a combination.</p>
+          <p class="right"></p>
+        </figcaption>
+      </figure>
+      <figure id="slide-5"><a class="view" href="#"><img src="5.png" alt=""></a>
+        <figcaption>
+          <h2>Simple and Complex Interest</h2>
+          <p>Simple interest is the sum paid for using the borowed money, for a fixed period. On the other hand, whenever the interest becomes due for payment, it is added to the principal, on which interest for the succeeding period is reckoned, this is known as compound interest.</p>
+          <p class="right"></p>
+        </figcaption>
+      </figure>
+      <!-- ################################################################################################ -->
+      <ul id="slide-tabs">
+        <li><a href="#slide-1">English</a></li>
+        <li><a href="#slide-2">Numbers and Series</a></li>
+        <li><a href="#slide-3">Time and Distance</a></li>
+        <li><a href="#slide-4">Permutations and Combinations</a></li>
+        <li><a href="#slide-5">Simple Interest and Compound Interest</a></li>
+      </ul>
+      <!-- ################################################################################################ --> 
+    </div>
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row3">
+  <div class="rounded">
+    <main class="container clear"> 
+      <!-- main body --> 
+      <!-- ################################################################################################ -->
+      <div class="group btmspace-30"> 
+        <!-- Left Column -->
+        <div class="one_quarter first"> 
+          <!-- ################################################################################################ -->
+          <ul class="nospace">
+            <li class="btmspace-15"><a href="#"><em class="heading">Books you may REFER :</em> <img class="borderedbox" src="7.jpg" alt=""></a></li>
+            <li class="btmspace-15"><a href="#"><em class="heading"></em> <img class="borderedbox" src="8.jpg" alt=""></a></li>
+            <li class="btmspace-15"><a href="#"><em class="heading"></em> <img class="borderedbox" src="9.jpg" alt=""></a></li>
+            <li><a href="#"><em class="heading"></em> <img class="borderedbox" src="11.jpg" alt=""></a></li>
+          </ul>
+          <!-- ################################################################################################ --> 
+        </div>
+        <!-- / Left Column --> 
+        <!-- Middle Column -->
+        <div class="one_half"> 
+          <!-- ################################################################################################ -->
+          <h2>Different Types of Amplitude Exams</h2>
+          <ul class="nospace listing">
+            <li class="clear">
+              <div class="imgl borderedbox"><img src="47.jpg" alt=""></div>
+              <p class="nospace btmspace-15"><a href="#">CAT</a></p>
+              <p>The Common Admission Test  is a computer based test held in India. The Indian Institutes of Management (IIMs) started this exam and use the test for selecting students for their business administration programs.</p>   
+ 
+            </li>
+            <li class="clear">
+              <div class="imgl borderedbox"><img src="46.jpg" alt=""></div>
+              <p class="nospace btmspace-15"><a href="#">GRE</a></p>
+              <p>The Graduate Record Examinations (GRE) is a standardized test that is an admissions requirement for most Graduate Schools in foriegn countries.</p>
+            </li>
+            <li class="clear">
+              <div class="imgl borderedbox"><img src="48.jpg" alt=""></div>
+              <p class="nospace btmspace-15"><a href="#">Company Based Amplitude</a></p>
+              <p>The difficulty level of exam vary from company to company.The test scores a candidate on the bases of Quantitative Ability (QA), Verbal Ability (VA) and Reading Comprehension (RC), Data Interpretation (DI) and Logical Reasoning (LR).</p>
+            </li>
+          </ul>
+          <p class="right"><a href="#"></a></p>
+          <!-- ################################################################################################ --> 
+        </div>
+        <!-- / Middle Column --> 
+        <!-- Right Column -->
+        <div class="one_quarter sidebar"> 
+          <!-- ################################################################################################ -->
+          <div class="sdb_holder">
+            <h6>Virtual Tour</h6>
+            <div class="mediacontainer"><img src="6.gif" alt="">
+              <p><a href="#"></a></p>
+            </div>
+          </div>
+          <div class="sdb_holder">
+            <h6>Quick Information</h6>
+            <ul class="nospace quickinfo">
+              <li class="clear"><a href="C:\Users\User\Desktop\academic-education\pages\ep11.html"><img src="10.jpg" alt=""> Get the Trial</a></li>
+              
+            </ul>
+          </div>
+          <!-- ################################################################################################ --> 
+        </div>
+        <!-- / Right Column --> 
+      </div>
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+       <div id="twitter" class="group btmspace-30">
+        <div class="one_quarter first center"><a href="#"><i class="fa fa-twitter fa-3x"></i><br>
+          Follow Us On Twitter</a></div>
+        <div class="three_quarter bold">
+          <p>To get updated and to compete with whole world stay tunned and connected with us.</p>
+        </div>
+      </div>
+      <!-- ################################################################################################ --> 
+      <!-- ################################################################################################ -->
+      <div class="group">
+        
+      <!-- ################################################################################################ --> 
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row4">
+  <div class="rounded">
+    <footer id="footer" class="clear"> 
+      <!-- ################################################################################################ -->
+      <div class="one_third first">
+        <figure class="center"><img class="btmspace-15" src="worldmap.png" alt="">
+          <figcaption><a href="#">Find Us With Google Maps &raquo;</a></figcaption>
+        </figure>
+      </div>
+      <div class="one_third">
+        <address>
+        Developed By:<br>
+       Rahul Tiwari<br>
+       Shubham Wani<br>
+       Mayur Yadav<br>
+      <br>
+        <i class="fa fa-envelope-o pright-10"></i> <a href="#">rahulkrla123@gmail.com</a><br>
+        <i class="fa fa-envelope-o pright-10"></i> <a href="#">shubhamwani42@gmail.com</a><br>
+        <i class="fa fa-envelope-o pright-10"></i> <a href="#">yadavmayur770@gmail.com</a><br>
+        </address>
+      </div>
+      <div class="one_third">
+        <p class="nospace btmspace-10">Stay Up to Date With What's Happening</p>
+        <ul class="faico clear">
+          <li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
+          <li><a class="faicon-facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="faicon-flickr" href="#"><i class="fa fa-flickr"></i></a></li>
+          <li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>
+        </ul>
+        <form class="clear" method="post" action="#">
+          <fieldset>
+            <legend>Subscribe To Our Newsletter:</legend>
+            <input type="text" value="" name="email" placeholder="Enter Email Here&hellip;">
+            <button class="fa fa-sign-in" type="submit" title="Sign Up"><em>Sign Up</em></button>
+          </fieldset>
+        </form>
+      </div>
+      <!-- ################################################################################################ --> 
+    </footer>
+  </div>
+</div>
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ --> 
+<!-- ################################################################################################ -->
+<div class="wrapper row5">
+  <div id="copyright" class="clear"> 
+    <!-- ################################################################################################ -->
+    <p class="fl_left">Copyright &copy; 2017 - All Rights Reserved - <a href="#">VCET</a></p>
+    <!-- ################################################################################################ --> 
+  </div>
+</div>
+<!-- JAVASCRIPTS --> 
+<script src="layout/scripts/jquery.min.js"></script> 
+<script src="layout/scripts/jquery.fitvids.min.js"></script> 
+<script src="layout/scripts/jquery.mobilemenu.js"></script> 
+<script src="layout/scripts/tabslet/jquery.tabslet.min.js"></script>
+</body>
+</html>
